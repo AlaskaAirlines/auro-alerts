@@ -11,10 +11,38 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 
 // container styles - defines the look of the outer custom componet
-// :host {
-//   ...
-// }
+:host([error]) {
+  .alert {
+    border-color: var(--auro-color-alert-error-on-light);
+    color: var(--auro-color-text-primary-on-light);
+  }
 
+  svg {
+    color: var(--auro-color-alert-error-on-light);
+  }
+}
+
+:host([warning]) {
+  .alert {
+    border-color: var(--auro-color-alert-warning-on-light);
+    color: var(--auro-color-text-primary-on-light);
+  }
+
+  svg {
+    color: var(--auro-color-alert-warning-on-light);
+  }
+}
+
+:host([information]) {
+  .alert {
+    border-color: var(--auro-color-alert-notification-on-light);
+    color: var(--auro-color-text-primary-on-light);
+  }
+
+  svg {
+    color: var(--auro-color-alert-notification-on-light);
+  }
+}
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element ouside the scope of this component
 
@@ -24,9 +52,26 @@
 //   ...
 // }
 
-.testClass {
-  color:  var(--auro-color-border-error-on-light);
-  border: 1px solid var(--auro-color-border-error-on-light);
-  display: inline-block;
-  padding: var(--auro-text-body-size-default);
+.alert {
+  border-width: var(--auro-border-width-thick);
+  border-left-width: var(--auro-size-xs);
+  border-style: solid;
+  border-radius: var(--auro-border-radius);
 }
+
+.icon {
+  display: inline-block;
+  margin-left: var(--auro-size-sm);
+  margin-top: var(--auro-size-xs);
+  margin-right: var(--aruo-size-xxs);
+}
+
+.content {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: var(--auro-size-xxs);
+  margin-top: var(--auro-size-xs);
+  line-height: var(--auro-size-md);
+  width: auto;
+}
+
