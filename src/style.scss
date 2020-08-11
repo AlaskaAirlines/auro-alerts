@@ -10,6 +10,11 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 
+:host {
+  display: block;
+  width: 100%;
+}
+
 // container styles - defines the look of the outer custom componet
 :host([error]) {
   .alert {
