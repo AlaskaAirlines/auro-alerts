@@ -9,7 +9,6 @@ import { LitElement, html, css } from "lit-element";
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
 import warning from '@alaskaairux/icons/dist/icons/alert/warning-stroke_es6.js';
 import information from '@alaskaairux/icons/dist/icons/alert/information-stroke_es6.js';
-import question from '@alaskaairux/icons/dist/icons/alert/question-stroke_es6.js';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -25,8 +24,6 @@ class AuroAlerts extends LitElement {
     this.warningSVG = this.warningDOM.body.firstChild;
     this.informationDOM = new DOMParser().parseFromString(information.svg, 'text/html');
     this.informationSVG = this.informationDOM.body.firstChild;
-    this.questionDOM = new DOMParser().parseFromString(question.svg, 'text/html');
-    this.questionSVG = this.questionDOM.body.firstChild;
   }
 
   // function to define props used within the scope of thie component

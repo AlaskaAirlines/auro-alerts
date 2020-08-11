@@ -46,32 +46,36 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element ouside the scope of this component
 
-
-// component shape styles
-// .auro-alerts {
-//   ...
-// }
-
 .alert {
   border-width: var(--auro-border-width-thick);
   border-left-width: var(--auro-size-xs);
   border-style: solid;
   border-radius: var(--auro-border-radius);
+  padding-top: var(--auro-size-xs);
+  display: flex;
 }
 
 .icon {
-  display: inline-block;
+  align-items: flex-start;
+  justify-content: center;
   margin-left: var(--auro-size-sm);
-  margin-top: var(--auro-size-xs);
-  margin-right: var(--aruo-size-xxs);
 }
 
 .content {
-  display: inline-block;
-  vertical-align: top;
-  padding-top: var(--auro-size-xxs);
-  margin-top: var(--auro-size-xs);
+  align-items: flex-end;
+  justify-content: center;
   line-height: var(--auro-size-md);
-  width: auto;
+  margin-left: var(--auro-size-xs);
+  margin-right: var(--auro-size-xs);
+  margin-top: calc(var(--auro-size-xxs) + var(--auro-size-xxxs));
+  margin-bottom: var(--auro-size-xs);
 }
 
+.content ::slotted(p) {
+  margin-top: var(--auro-size-none);
+  line-height: var(--auro-size-md);
+}
+
+.content ::slotted(p:last-child) {
+  margin-bottom: var(--auro-size-none);
+}
