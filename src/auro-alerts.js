@@ -26,7 +26,7 @@ class AuroAlerts extends LitElement {
     this.informationSVG = this.informationDOM.body.firstChild;
   }
 
-  // function to define props used within the scope of thie component
+  // function to define props used within the scope of this component
   static get properties() {
     return {
       error: {

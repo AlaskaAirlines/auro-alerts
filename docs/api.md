@@ -1,5 +1,15 @@
-## Properties: auro-alerts
+# auro-alerts
 
-| Attribute | Value type | Description |
-|----|----|----|
-| attr | string, boolean, function | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
+## Properties
+
+| Property         | Attribute     | Type         | Default      |
+|------------------|---------------|--------------|--------------|
+| `error`          | `error`       | `boolean`    |              |
+| `errorDOM`       |               |              |              |
+| `errorSVG`       |               | `any \| any` | "firstChild" |
+| `information`    | `information` | `boolean`    |              |
+| `informationDOM` |               |              |              |
+| `informationSVG` |               | `any \| any` | "firstChild" |
+| `warning`        | `warning`     | `boolean`    |              |
+| `warningDOM`     |               |              |              |
+| `warningSVG`     |               | `any \| any` | "firstChild" |
