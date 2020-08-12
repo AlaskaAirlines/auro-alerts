@@ -30,6 +30,7 @@
     "focus-visible": "^5.1.0"
   },
   "devDependencies": {
+    "@alaskaairux/auro-hyperlink": "^2.0.1",
     "@alaskaairux/orion-design-tokens": "^2.12.1",
     "@alaskaairux/orion-icons": "^2.1.5",
     "@alaskaairux/orion-web-core-style-sheets": "^2.10.3",

@@ -13,6 +13,7 @@
       import '@polymer/iron-demo-helpers/demo-snippet';
     </script>
     <script type="module" src="../src/auro-alerts.js"></script>
+    <script type="module" src="../node_modules/@alaskaairux/auro-hyperlink/dist/auro-hyperlink.js"></script>
     <script src="../demo/alert.js"></script>
     <script type="module">
       import '../node_modules/@polymer/iron-icons/hardware-icons.js';
@@ -74,7 +75,7 @@
 
       <demo-snippet>
         <template>
-          <auro-alerts information>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <a href="#">Rules for children traveling alone.</a></auro-alerts>
+          <auro-alerts information>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <auro-hyperlink href="/children-travel" target="_blank">Rules for children traveling alone.</auro-hyperlink></auro-alerts>
         </template>
       </demo-snippet>
 
@@ -90,7 +91,7 @@
       <demo-snippet>
         <template>
           <auro-alerts information>
-            <p>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <a href="#">Rules for children traveling alone.</a></p>
+            <p>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <auro-hyperlink href="/children-travel">Rules for children traveling alone.</auro-hyperlink></p>
             <p>We searched for all Seattle Area, WA airports. Be sure to note which airport is being used.</p>
             <p>We searched for all Bay Area, CA airports. Be sure to note which airport is being used.</p>
           </auro-alerts>
