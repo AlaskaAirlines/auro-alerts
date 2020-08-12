@@ -14,17 +14,14 @@ import information from '@alaskaairux/icons/dist/icons/alert/information-stroke_
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
 
-// build the component class
+/**
+ * @attr {Boolean} error - Turns alert into error style
+ * @attr {Boolean} warning - Turns alert into warning style
+ * @attr {Boolean} information - Turns alert into information style
+ *
+ * @slot - Provide text for the alert. If using multiple lines, separate each line with <p> tags.
+ */
 class AuroAlerts extends LitElement {
-  constructor() {
-    super();
-    this.errorDOM = new DOMParser().parseFromString(error.svg, 'text/html');
-    this.errorSVG = this.errorDOM.body.firstChild;
-    this.warningDOM = new DOMParser().parseFromString(warning.svg, 'text/html');
-    this.warningSVG = this.warningDOM.body.firstChild;
-    this.informationDOM = new DOMParser().parseFromString(information.svg, 'text/html');
-    this.informationSVG = this.informationDOM.body.firstChild;
-  }
 
   // function to define props used within the scope of this component
   static get properties() {
@@ -52,11 +49,28 @@ class AuroAlerts extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+    let output = html``;
+
+    if (this.error) {
+      const dom = new DOMParser().parseFromString(error.svg, 'text/html'),
+       svg = dom.body.firstChild;
+
+      output = html`<div class="icon">${svg}</div>`
+    } else if (this.warning) {
+      const dom = new DOMParser().parseFromString(warning.svg, 'text/html'),
+       svg = dom.body.firstChild;
+
+      output = html`<div class="icon">${svg}</div>`
+    } else if (this.information) {
+      const dom = new DOMParser().parseFromString(information.svg, 'text/html'),
+       svg = dom.body.firstChild;
+
+      output = html`<div class="icon">${svg}</div>`
+    }
+
     return html`
       <div class="alert">
-        ${this.error ? html`<div class="icon">${this.errorSVG}</div>` : html``}
-        ${this.warning ? html`<div class="icon">${this.warningSVG}</div>` : html``}
-        ${this.information ? html`<div class="icon">${this.informationSVG}</div>` : html``}
+        ${output}
         <div class="content">
           <slot></slot>
         </div>
