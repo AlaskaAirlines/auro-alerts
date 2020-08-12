@@ -65,20 +65,30 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 **Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
 
 
-## auro-alerts use cases
-
-The `<auro-alerts>` element should be used in situations where users may:
-
-* ...
-* ...
-* ...
-
 ## API Code Examples
 
 Default auro-alerts
 
 ```html
-<auro-alerts>Hello World</auro-alerts>
+<auro-alerts error>Departing flight AS 1066 cannot accommodate any ... </auro-alerts>
+```
+
+```html
+<auro-alerts warning>Departing flight AS 1066 cannot accommodate any ... </auro-alerts>
+```
+
+```html
+<auro-alerts information>Departing flight AS 1066 cannot accommodate any ... </auro-alerts>
+```
+
+Auro alerts with nested content/components
+
+```html
+<auro-alerts information>
+  <p>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <auro-hyperlink href="/children-travel">Rules for children traveling alone.</auro-hyperlink></p>
+  <p>We searched for all Seattle Area, WA airports. Be sure to note which airport is being used.</p>
+  <p>We searched for all Bay Area, CA airports. Be sure to note which airport is being used.</p>
+</auro-alerts>
 ```
 
 ## Development
