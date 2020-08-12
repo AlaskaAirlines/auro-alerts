@@ -49,7 +49,7 @@
 }
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element ouside the scope of this component
+// never define layout that would cause effect on element outside the scope of this component
 
 .alert {
   display: flex;
@@ -59,16 +59,12 @@
   border-radius: var(--auro-border-radius);
   padding: var(--auro-size-xs);
   padding-left: 0;
-  padding-right: 0;
+  padding-right: var(--auro-size-xs);
 }
 
 .icon {
   display: flex;
   margin-left: var(--auro-size-sm);
-  margin-right: var(--auro-size-xs);
-}
-
-.content {
   margin-right: var(--auro-size-xs);
 }
 
