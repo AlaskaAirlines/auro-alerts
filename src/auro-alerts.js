@@ -18,6 +18,8 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} error - Turns alert into error style
  * @attr {Boolean} warning - Turns alert into warning style
  * @attr {Boolean} information - Turns alert into information style
+ * @attr {Boolean} hidden - If present, the component will be hidden
+ * @attr {String} role - The role will be set based on type
  *
  * @slot - Provide text for the alert. If using multiple lines, separate each line with <p> tags.
  */
@@ -26,16 +28,12 @@ class AuroAlerts extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      error: {
-        type: Boolean,
-        reflect: true
-      },
-      warning: {
-        type: Boolean,
-        reflect: true
-      },
-      information: {
-        type: Boolean,
+      error: { type: Boolean },
+      warning: { type: Boolean },
+      information: { type: Boolean },
+      hidden: { type: Boolean },
+      role: {
+        type: String,
         reflect: true
       }
     };
@@ -47,25 +45,30 @@ class AuroAlerts extends LitElement {
     `;
   }
 
+  /**
+   * Internal function to generate the HTML for the icon to use
+   * @param {string} svgContent - The imported svg icon
+   * @returns {TemplateResult} - The html template for the icon
+   */
+  generateIconHtml(svgContent) {
+    const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
+    svg = dom.body.firstChild;
+
+   return html`<div class="icon">${svg}</div>`;
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     let output = html``;
 
     if (this.error) {
-      const dom = new DOMParser().parseFromString(error.svg, 'text/html'),
-       svg = dom.body.firstChild;
-
-      output = html`<div class="icon">${svg}</div>`
+      output = this.generateIconHtml(error.svg);
+      this.role = "alert";
     } else if (this.warning) {
-      const dom = new DOMParser().parseFromString(warning.svg, 'text/html'),
-       svg = dom.body.firstChild;
-
-      output = html`<div class="icon">${svg}</div>`
+      output = this.generateIconHtml(warning.svg);
+      this.role = "alert";
     } else if (this.information) {
-      const dom = new DOMParser().parseFromString(information.svg, 'text/html'),
-       svg = dom.body.firstChild;
-
-      output = html`<div class="icon">${svg}</div>`
+      output = this.generateIconHtml(information.svg);
     }
 
     return html`

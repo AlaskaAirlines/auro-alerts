@@ -4,6 +4,20 @@ import { fixture, html, expect } from '@open-wc/testing';
 import '../src/auro-alerts.js';
 
 describe('auro-alerts', () => {
+  it('sets auro-alerts to hidden', async () => {
+    const el = await fixture(html`
+      <auro-alerts error hidden></auro-alerts>
+    `);
+
+    const root = el.shadowRoot;
+    const svg = root.querySelector('svg');
+    const title = svg.querySelector('title');
+
+    await expect(el.hidden).to.be.true;
+    await expect(el.role).to.equal("alert");
+    await expect(title.innerHTML).to.equal("Error");
+  });
+
   it('sets auro-alerts to error style', async () => {
     const el = await fixture(html`
       <auro-alerts error></auro-alerts>
@@ -13,6 +27,7 @@ describe('auro-alerts', () => {
     const svg = root.querySelector('svg');
     const title = svg.querySelector('title');
 
+    await expect(el.role).to.equal("alert");
     await expect(title.innerHTML).to.equal("Error");
   });
 
@@ -25,6 +40,7 @@ describe('auro-alerts', () => {
     const svg = root.querySelector('svg');
     const title = svg.querySelector('title');
 
+    await expect(el.role).to.equal("alert");
     await expect(title.innerHTML).to.equal("Warning");
   });
 
@@ -38,6 +54,7 @@ describe('auro-alerts', () => {
     const svg = root.querySelector('svg');
     const title = svg.querySelector('title');
 
+    await expect(el.role).to.be.undefined;
     await expect(title.innerHTML).to.equal("Information");
   });
 
