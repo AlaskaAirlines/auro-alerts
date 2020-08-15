@@ -14,10 +14,6 @@
     </script>
     <script type="module" src="../src/auro-alerts.js"></script>
     <script type="module" src="../node_modules/@alaskaairux/auro-hyperlink/dist/auro-hyperlink.js"></script>
-    <script src="../demo/alert.js"></script>
-    <script type="module">
-      import '../node_modules/@polymer/iron-icons/hardware-icons.js';
-    </script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
@@ -28,54 +24,21 @@
     <div class="vertical-section-container">
       <h1>auro-alerts</h1>
 
-      <p>Component description ...</p>
-
-      <p class="ironIcons">
-        <span class="util_floatLeft util_marginRight--med"
-          >Narrow
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:phone-iphone"
-          ></iron-icon>
-        </span>
-        <span class="util_is-narrowAppears util_floatLeft util_marginRight--med"
-          >Medium
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:tablet-android"
-          ></iron-icon>
-        </span>
-        <span class="util_is-tabletAppears util_floatLeft util_marginRight--med"
-          >Wide
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:tablet"
-          ></iron-icon>
-        </span>
-        <span class="util_is-desktopOnly util_floatLeft util_marginRight--med"
-          >Max
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:tv"
-          ></iron-icon>
-        </span>
-      </p>
-
       <demo-snippet>
         <template>
-          <auro-alerts error>Departing flight AS 1066 cannot accommodate any additional unaccompanied minors. Please choose a different flight.</auro-alerts>
+          <auro-alerts error hidden>Departing flight AS 1066 cannot accommodate any additional unaccompanied minors. Please choose a different flight.</auro-alerts>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <auro-alerts warning>An airline in your reservation provides a different confirmation code for one or more of your flights. You may be asked for this code if you make adjustments to those flight.</auro-alerts>
+          <auro-alerts warning hiddenVisually>An airline in your reservation provides a different confirmation code for one or more of your flights. You may be asked for this code if you make adjustments to those flight.</auro-alerts>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <auro-alerts information>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <auro-hyperlink href="/children-travel" target="_blank">Rules for children traveling alone.</auro-hyperlink></auro-alerts>
+          <auro-alerts information hiddenAudible>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <auro-hyperlink href="/children-travel" target="_blank">Rules for children traveling alone.</auro-hyperlink></auro-alerts>
         </template>
       </demo-snippet>
 

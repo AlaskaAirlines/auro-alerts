@@ -18,7 +18,9 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} error - Turns alert into error style
  * @attr {Boolean} warning - Turns alert into warning style
  * @attr {Boolean} information - Turns alert into information style
- * @attr {Boolean} hidden - If present, the component will be hidden
+ * @attr {Boolean} hidden - If present, the component will be hidden both visually and from screen readers
+ * @attr {Boolean} hiddenVisually - If present, the component will be hidden visually, but still read by screen readers
+ * @attr {Boolean} hiddenAudible - If present, the component will be hidden from screen readers, but seen visually
  * @attr {String} role - The role will be set based on type
  *
  * @slot - Provide text for the alert. If using multiple lines, separate each line with <p> tags.
@@ -28,14 +30,17 @@ class AuroAlerts extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      error: { type: Boolean },
-      warning: { type: Boolean },
-      information: { type: Boolean },
-      hidden: { type: Boolean },
-      role: {
-        type: String,
-        reflect: true
-      }
+      error:          { type: Boolean },
+      warning:        { type: Boolean },
+      information:    { type: Boolean },
+      hidden:         { type: Boolean,
+                        reflect: true },
+      hiddenVisually: { type: Boolean,
+                        reflect: true },
+      hiddenAudible:  { type: Boolean,
+                        reflect: true },
+      role:           { type: String,
+                        reflect: true }
     };
   }
 
@@ -43,6 +48,14 @@ class AuroAlerts extends LitElement {
     return css`
       ${styleCss}
     `;
+  }
+
+  hideAudible(value) {
+    if (value) {
+      return 'true'
+    }
+
+    return 'false'
   }
 
   /**
@@ -72,7 +85,8 @@ class AuroAlerts extends LitElement {
     }
 
     return html`
-      <div class="alert">
+      <div class="alert"
+        aria-hidden="${this.hideAudible(this.hiddenAudible)}">
         ${output}
         <div class="content">
           <slot></slot>

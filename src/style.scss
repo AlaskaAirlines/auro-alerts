@@ -10,12 +10,18 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
+
 :host {
-  display: block;
+  @extend .util_displayBlock;
 }
 
-:host([hidden]) {
-  visibility: hidden;
+:host([hidden]:not(:focus):not(:active)) {
+  @extend .util_displayHidden;
+}
+
+:host([hiddenVisually]:not(:focus):not(:active)) {
+  @extend .util_displayHiddenVisually;
 }
 
 // container styles - defines the look of the outer custom component

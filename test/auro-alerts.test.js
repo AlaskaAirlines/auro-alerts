@@ -12,8 +12,40 @@ describe('auro-alerts', () => {
     const root = el.shadowRoot;
     const svg = root.querySelector('svg');
     const title = svg.querySelector('title');
+    const content = root.querySelector('div');
 
+    await expect(content.getAttribute('aria-hidden')).to.equal('false');
     await expect(el.hidden).to.be.true;
+    await expect(el.role).to.equal("alert");
+    await expect(title.innerHTML).to.equal("Error");
+  });
+
+  it('sets auro-alerts to hidden visually', async () => {
+    const el = await fixture(html`
+      <auro-alerts error hiddenVisually></auro-alerts>
+    `);
+
+    const root = el.shadowRoot;
+    const svg = root.querySelector('svg');
+    const title = svg.querySelector('title');
+    const content = root.querySelector('div');
+
+    await expect(el.role).to.equal("alert");
+    await expect(content.getAttribute('aria-hidden')).to.equal('false');
+    await expect(title.innerHTML).to.equal("Error");
+  });
+
+  it('sets auro-alerts to hidden from screen readers', async () => {
+    const el = await fixture(html`
+      <auro-alerts error hiddenAudible></auro-alerts>
+    `);
+
+    const root = el.shadowRoot;
+    const svg = root.querySelector('svg');
+    const title = svg.querySelector('title');
+    const content = root.querySelector('div');
+
+    await expect(content.getAttribute('aria-hidden')).to.equal('true');
     await expect(el.role).to.equal("alert");
     await expect(title.innerHTML).to.equal("Error");
   });
