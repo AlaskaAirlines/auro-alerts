@@ -26,19 +26,33 @@
 
       <demo-snippet>
         <template>
-          <auro-alerts error hidden>Departing flight AS 1066 cannot accommodate any additional unaccompanied minors. Please choose a different flight.</auro-alerts>
+          <auro-alerts>This is an undefined alert</auro-alerts>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <auro-alerts warning hiddenVisually>An airline in your reservation provides a different confirmation code for one or more of your flights. You may be asked for this code if you make adjustments to those flight.</auro-alerts>
+          <auro-alerts error>There is an error ... check that out</auro-alerts>
+          <auro-alerts warning>Hey, there is something wrong, but it's ok</auro-alerts>
+          <auro-alerts information>Just letting you know, don't look in your closet.</auro-alerts>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <auro-alerts information hiddenAudible>For your child's safety, unaccompanied minors aged 8-17 can only fly on Alaska Airlines flights departing between 5:00 AM and 9:00 PM. <auro-hyperlink href="/children-travel" target="_blank">Rules for children traveling alone.</auro-hyperlink></auro-alerts>
+          <auro-alerts error hidden>This content will be hidden visually and from screen readers</auro-alerts>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-alerts warning hiddenVisually>This content will be hidden visually, but screen readers will pick it up..</auro-alerts>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-alerts information hiddenAudible>This content will be hidden from screen readers.</auro-alerts>
         </template>
       </demo-snippet>
 
@@ -61,25 +75,6 @@
         </template>
       </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <auro-alerts error hidden>Departing flight AS 1066 cannot accommodate any additional unaccompanied minors. Please choose a different flight.</auro-alerts>
-        </template>
-      </demo-snippet>
-
-      <h2>Element &#60;auro-alerts&#62;</h2>
-
-      <pre><code>class AuroAlerts extends LitElement</code></pre>
-
-      <h3>Styling:</h3>
-      <p>Info ...</p>
-
-      <h3>Responsive state:</h3>
-      <p>Info ...</p>
-
-      <h3>Properties:</h3>
-      <code><strong>string:</strong> string</code>
-      <p>Info ...</p>
     </div>
   </body>
 </html>

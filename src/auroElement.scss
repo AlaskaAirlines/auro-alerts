@@ -1,0 +1,18 @@
+// Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
+
+:host {
+  @extend .util_displayBlock;
+}
+
+:host([hidden]:not(:focus):not(:active)) {
+  @extend .util_displayHidden;
+}
+
+:host([hiddenVisually]:not(:focus):not(:active)) {
+  @extend .util_displayHiddenVisually;
+}

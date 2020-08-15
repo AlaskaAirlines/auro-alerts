@@ -3,7 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from "lit-element";
+import { html, css } from "lit-element";
+import AuroElement from './auroElement';
+import auroElementCss from "./auroElement-css.js";
 
 // Import Icons
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
@@ -18,27 +20,19 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} error - Turns alert into error style
  * @attr {Boolean} warning - Turns alert into warning style
  * @attr {Boolean} information - Turns alert into information style
- * @attr {Boolean} hidden - If present, the component will be hidden both visually and from screen readers
- * @attr {Boolean} hiddenVisually - If present, the component will be hidden visually, but still read by screen readers
- * @attr {Boolean} hiddenAudible - If present, the component will be hidden from screen readers, but seen visually
  * @attr {String} role - The role will be set based on type
  *
  * @slot - Provide text for the alert. If using multiple lines, separate each line with <p> tags.
  */
-class AuroAlerts extends LitElement {
+class AuroAlerts extends AuroElement {
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
+      ...super.properties,
       error:          { type: Boolean },
       warning:        { type: Boolean },
       information:    { type: Boolean },
-      hidden:         { type: Boolean,
-                        reflect: true },
-      hiddenVisually: { type: Boolean,
-                        reflect: true },
-      hiddenAudible:  { type: Boolean,
-                        reflect: true },
       role:           { type: String,
                         reflect: true }
     };
@@ -46,16 +40,9 @@ class AuroAlerts extends LitElement {
 
   static get styles() {
     return css`
+      ${auroElementCss}
       ${styleCss}
     `;
-  }
-
-  hideAudible(value) {
-    if (value) {
-      return 'true'
-    }
-
-    return 'false'
   }
 
   /**
@@ -73,15 +60,27 @@ class AuroAlerts extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     let output = html``;
+    const alertType = this.error || this.warning || this.information;
 
-    if (this.error) {
-      output = this.generateIconHtml(error.svg);
-      this.role = "alert";
-    } else if (this.warning) {
-      output = this.generateIconHtml(warning.svg);
-      this.role = "alert";
-    } else if (this.information) {
-      output = this.generateIconHtml(information.svg);
+    switch (alertType) {
+      case undefined:
+        break;
+      case this.error:
+        output = this.generateIconHtml(error.svg);
+        this.role = "alert";
+        this.type = "Error.";
+        break;
+      case this.warning:
+        output = this.generateIconHtml(warning.svg);
+        this.role = "alert";
+        this.type = "Warning."
+        break;
+      case this.information:
+        output = this.generateIconHtml(information.svg);
+        this.type = "Informational notice."
+        break;
+      default:
+        break;
     }
 
     return html`
@@ -89,6 +88,7 @@ class AuroAlerts extends LitElement {
         aria-hidden="${this.hideAudible(this.hiddenAudible)}">
         ${output}
         <div class="content">
+          <span class="util_displayHiddenVisually">${this.type}</span>
           <slot></slot>
         </div>
       </div>

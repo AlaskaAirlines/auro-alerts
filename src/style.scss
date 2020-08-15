@@ -10,20 +10,6 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-
-:host {
-  @extend .util_displayBlock;
-}
-
-:host([hidden]:not(:focus):not(:active)) {
-  @extend .util_displayHidden;
-}
-
-:host([hiddenVisually]:not(:focus):not(:active)) {
-  @extend .util_displayHiddenVisually;
-}
-
 // container styles - defines the look of the outer custom component
 :host([error]) {
   .alert {
@@ -68,13 +54,14 @@
   border-style: solid;
   border-radius: var(--auro-border-radius);
   padding: var(--auro-size-xs);
-  padding-left: 0;
+  padding-left: var(--auro-size-sm);
   padding-right: var(--auro-size-xs);
+
+  border-color: var(--auro-color-base-neutral-400);
 }
 
 .icon {
   display: flex;
-  margin-left: var(--auro-size-sm);
   margin-right: var(--auro-size-xs);
 }
 
