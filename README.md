@@ -9,8 +9,8 @@ For the most up to date information on [UI development browser support](https://
 ## Install
 
 [![Build Status](https://img.shields.io/travis/AlaskaAirlines/auro-alerts?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/auro-alerts)
-[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux//auro-alerts?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux//auro-alerts)
-[![License](https://img.shields.io/npm/l/@alaskaairux//auro-alerts?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-alerts?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux//auro-alerts)
+[![License](https://img.shields.io/npm/l/@alaskaairux/auro-alerts?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
 $ npm i @alaskaairux/auro-alerts
