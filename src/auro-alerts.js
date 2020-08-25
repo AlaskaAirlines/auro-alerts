@@ -4,8 +4,7 @@
 // ---------------------------------------------------------------------
 
 import { html, css } from "lit-element";
-import AuroElement from './auroElement';
-import auroElementCss from "./auroElement-css.js";
+import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
 
 // Import Icons
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
@@ -40,7 +39,6 @@ class AuroAlerts extends AuroElement {
 
   static get styles() {
     return css`
-      ${auroElementCss}
       ${styleCss}
     `;
   }

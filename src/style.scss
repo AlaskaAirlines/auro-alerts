@@ -10,6 +10,8 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+
 // container styles - defines the look of the outer custom component
 :host([error]) {
   .alert {
