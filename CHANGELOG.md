@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.0.0...v1.1.0) (2020-08-25)
+
+
+### Features
+
+* move baseclass a11y features to depednency ([a18747e](https://github.com/AlaskaAirlines/auro-alerts/commit/a18747e0e08490f4ecea4b68b5eae49ffbc4b23d))
+
 # 1.0.0 (2020-08-17)
 
 
