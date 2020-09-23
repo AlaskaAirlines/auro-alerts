@@ -44,7 +44,7 @@ class AuroAlerts extends AuroElement {
   }
 
   /**
-   * Internal function to generate the HTML for the icon to use
+   * @private Internal function to generate the HTML for the icon to use
    * @param {string} svgContent - The imported svg icon
    * @returns {TemplateResult} - The html template for the icon
    */

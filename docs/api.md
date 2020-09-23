@@ -12,13 +12,6 @@
 | `role`           | `role`           | `String`  | The role will be set based on type               |
 | `warning`        | `warning`        | `Boolean` | Turns alert into warning style                   |
 
-## Methods
-
-| Method             | Type                                   | Description                                      |
-|--------------------|----------------------------------------|--------------------------------------------------|
-| `generateIconHtml` | `(svgContent: string): TemplateResult` | Internal function to generate the HTML for the icon to use<br /><br />**svgContent**: The imported svg icon |
-| `hideAudible`      | `(value: any): "true" \| "false"`      | Function that determines state of aria-hidden    |
-
 ## Slots
 
 | Name | Description                                      |
