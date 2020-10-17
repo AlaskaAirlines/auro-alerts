@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.1](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.1.0...v1.1.1) (2020-10-17)
+
+
+### Bug Fixes
+
+* increase right padding ([ee34259](https://github.com/AlaskaAirlines/auro-alerts/commit/ee3425957f5ec6a20f9be21c9f9537aa8ff8cb49))
+
 # [1.1.0](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.0.0...v1.1.0) (2020-08-25)
 
 
