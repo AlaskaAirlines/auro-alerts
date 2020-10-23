@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.2](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.1.1...v1.1.2) (2020-10-23)
+
+
+### Bug Fixes
+
+* adjust text line-height ([e77913c](https://github.com/AlaskaAirlines/auro-alerts/commit/e77913cdd36abc79d3467783e8d5e5ecd168678a))
+
 ## [1.1.1](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.1.0...v1.1.1) (2020-10-17)
 
 
