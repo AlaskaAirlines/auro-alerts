@@ -65,6 +65,12 @@
 .icon {
   display: flex;
   margin-right: var(--auro-size-xs);
+  width: var(--auro-size-lg);
+  height: var(--auro-size-lg);
+}
+
+.content {
+  line-height: var(--auro-text-body-height-lg);
 }
 
 .content ::slotted(p) {
