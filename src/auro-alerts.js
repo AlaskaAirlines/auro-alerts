@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { html, css } from "lit-element";
+import { html } from "lit-element";
 import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
 
 // Import Icons
@@ -14,9 +14,11 @@ import information from '@alaskaairux/icons/dist/icons/alert/information-stroke_
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
+import styleCssFixed from './style-fixed-css.js';
 
 /**
  * @attr {Boolean} error - Turns alert into error style
+ * @attr {Boolean} fixed - uses px values instead of rem
  * @attr {Boolean} warning - Turns alert into warning style
  * @attr {Boolean} information - Turns alert into information style
  * @attr {String} role - The role will be set based on type
@@ -38,9 +40,10 @@ class AuroAlerts extends AuroElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [
+      styleCss,
+      styleCssFixed
+    ]
   }
 
   /**
