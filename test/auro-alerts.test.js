@@ -14,16 +14,6 @@ describe('auro-alerts', () => {
     await expect(content.getAttribute('aria-hidden')).to.equal('false');
   });
 
-  it('injects additional fixed styles', async () => {
-    const el = await fixture(html`
-      <auro-alerts fixed></auro-alerts>
-    `);
-
-    const root = el.shadowRoot;
-    const content = root.querySelector('style');
-    await expect(content.innerHTML).to.contain("<!---->");
-  });
-
   it('sets auro-alerts to error style', async () => {
     const el = await fixture(html`
       <auro-alerts error></auro-alerts>
