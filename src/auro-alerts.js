@@ -32,6 +32,7 @@ class AuroAlerts extends AuroElement {
     return {
       ...super.properties,
       error:          { type: Boolean },
+      fixed:          { type: Boolean },
       warning:        { type: Boolean },
       information:    { type: Boolean },
       role:           { type: String,
@@ -40,10 +41,24 @@ class AuroAlerts extends AuroElement {
   }
 
   static get styles() {
-    return [
-      styleCss,
-      styleCssFixed
-    ]
+    return [styleCss]
+  }
+
+  /**
+   * @private Internal function to inject styles based on condition
+   * @param {boolean} isFixed - Determine condition
+   * @returns {string} - CSS styles
+   */
+  getFixedStyles(isFixed) {
+
+    if (isFixed) {
+      return html`
+        <p>Hello world</p>
+        <style>${styleCssFixed}</style>
+      `
+    }
+
+    return null
   }
 
   /**
@@ -85,6 +100,8 @@ class AuroAlerts extends AuroElement {
     }
 
     return html`
+      ${this.getFixedStyles(this.fixed)}
+
       <div class="alert"
         aria-hidden="${this.hideAudible(this.hiddenAudible)}">
         ${output}
