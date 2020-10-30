@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.2.0](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.1.2...v1.2.0) (2020-10-30)
+
+
+### Features
+
+* add fixed feature ([544fd83](https://github.com/AlaskaAirlines/auro-alerts/commit/544fd83720e771976deabd38e92f5776fc06e962))
+
 ## [1.1.2](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.1.1...v1.1.2) (2020-10-23)
 
 
