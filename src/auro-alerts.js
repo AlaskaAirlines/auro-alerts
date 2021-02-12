@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 import { html } from "lit-element";
-import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
+import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 
 // Import Icons
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
