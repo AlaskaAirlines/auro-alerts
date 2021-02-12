@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.3.0](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.2.1...v1.3.0) (2021-02-12)
+
+
+### Features
+
+* add support for rollup bundle ([bf0e10c](https://github.com/AlaskaAirlines/auro-alerts/commit/bf0e10c430c0908e6881f3e4292168090c69b0d7))
+
 ## [1.2.1](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.2.0...v1.2.1) (2020-12-03)
 
 
