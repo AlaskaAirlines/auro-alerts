@@ -21,7 +21,9 @@ import styleCssFixed from './style-fixed-css.js';
  * @attr {Boolean} error - Turns alert into error style
  * @attr {Boolean} fixed - uses px values instead of rem
  * @attr {Boolean} warning - Turns alert into warning style
+ * @attr {Boolean} success - Turns alert into success style
  * @attr {Boolean} information - Turns alert into information style
+ * @attr {Boolean} noIcon - Removes icon from alert UI
  * @attr {String} role - The role will be set based on type
  *
  * @slot - Provide text for the alert. If using multiple lines, separate each line with <p> tags.
