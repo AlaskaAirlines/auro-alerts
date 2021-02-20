@@ -44,6 +44,21 @@ describe('auro-alerts', () => {
     await expect(hiddenContent.innerHTML).to.equal("<!---->Warning.<!---->");
   });
 
+  it('sets auro-alerts to success style', async () => {
+    const el = await fixture(html`
+      <auro-alerts success></auro-alerts>
+    `);
+
+    const root = el.shadowRoot;
+    const svg = root.querySelector('svg');
+    const title = svg.querySelector('title');
+    const hiddenContent = root.querySelector('.util_displayHiddenVisually');
+
+    await expect(el.role).to.equal("alert");
+    await expect(title.innerHTML).to.equal("Check");
+    await expect(hiddenContent.innerHTML).to.equal("<!---->Success.<!---->");
+  });
+
 
   it('sets auro-alerts to information style', async () => {
     const el = await fixture(html`
@@ -57,6 +72,18 @@ describe('auro-alerts', () => {
 
     await expect(el.role).to.be.undefined;
     await expect(title.innerHTML).to.equal("Information");
+    await expect(hiddenContent.innerHTML).to.equal("<!---->Informational notice.<!---->");
+  });
+
+  it('sets auro-alerts to noIcon style', async () => {
+    const el = await fixture(html`
+      <auro-alerts information noIcon></auro-alerts>
+    `);
+
+    const root = el.shadowRoot;
+    const hiddenContent = root.querySelector('.util_displayHiddenVisually');
+
+    await expect(el.role).to.be.undefined;
     await expect(hiddenContent.innerHTML).to.equal("<!---->Informational notice.<!---->");
   });
 
