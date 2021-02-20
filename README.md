@@ -58,10 +58,6 @@ Since the legacy bundle includes many polyfills that are not needed by modern br
 <script src="https://unpkg.com/@alaskaairux/auro-alerts@latest/dist/auro-alerts__bundled.es5.js" nomodule></script>
 ```
 
-### polyfills.js
-
-The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
-
 ### IE11 Support
 
 **Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
@@ -81,6 +77,10 @@ Default auro-alerts
 
 ```html
 <auro-alerts information>Departing flight AS 1066 cannot accommodate any ... </auro-alerts>
+```
+
+```html
+<auro-alerts success>Updates to your flight AS 1066 have been saved. </auro-alerts>
 ```
 
 Auro alerts with nested content/components
