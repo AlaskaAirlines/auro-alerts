@@ -13,10 +13,18 @@
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 
 // container styles - defines the look of the outer custom component
+:host([error]),
+:host([warning]),
+:host([information]),
+:host([success]) {
+  .alert {
+    color: var(--auro-color-text-primary-on-light);
+  }
+}
+
 :host([error]) {
   .alert {
     border-color: var(--auro-color-alert-error-on-light);
-    color: var(--auro-color-text-primary-on-light);
   }
 
   svg {
@@ -27,7 +35,6 @@
 :host([warning]) {
   .alert {
     border-color: var(--auro-color-alert-warning-on-light);
-    color: var(--auro-color-text-primary-on-light);
   }
 
   svg {
@@ -38,11 +45,20 @@
 :host([information]) {
   .alert {
     border-color: var(--auro-color-alert-notification-on-light);
-    color: var(--auro-color-text-primary-on-light);
   }
 
   svg {
     color: var(--auro-color-alert-notification-on-light);
+  }
+}
+
+:host([success]) {
+  .alert {
+    border-color: var(--auro-color-alert-success-on-light);
+  }
+
+  svg {
+    color: var(--auro-color-alert-success-on-light);
   }
 }
 
@@ -71,6 +87,7 @@
 
 .content {
   line-height: var(--auro-text-body-height-lg);
+  width: -webkit-fill-available;
 }
 
 .content ::slotted(p) {

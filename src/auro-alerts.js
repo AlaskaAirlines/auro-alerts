@@ -10,6 +10,7 @@ import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroEl
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
 import warning from '@alaskaairux/icons/dist/icons/alert/warning-stroke_es6.js';
 import information from '@alaskaairux/icons/dist/icons/alert/information-stroke_es6.js';
+import success from '@alaskaairux/icons/dist/icons/interface/check-stroke_es6.js';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -31,7 +32,9 @@ class AuroAlerts extends AuroElement {
   static get properties() {
     return {
       ...super.properties,
+      noIcon:         { type: Boolean },
       error:          { type: Boolean },
+      success:        { type: Boolean },
       warning:        { type: Boolean },
       information:    { type: Boolean },
       role:           { type: String,
@@ -55,13 +58,15 @@ class AuroAlerts extends AuroElement {
     const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
     svg = dom.body.firstChild;
 
-   return html`<div class="icon">${svg}</div>`;
+  return this.noIcon
+    ? html``
+    : html`<div class="icon">${svg}</div>`
   }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     let output = html``;
-    const alertType = this.error || this.warning || this.information;
+    const alertType = this.error || this.warning || this.information || this.success;
 
     switch (alertType) {
       case undefined:
@@ -70,6 +75,11 @@ class AuroAlerts extends AuroElement {
         output = this.generateIconHtml(error.svg);
         this.role = "alert";
         this.type = "Error.";
+        break;
+      case this.success:
+        output = this.generateIconHtml(success.svg);
+        this.role = "alert";
+        this.type = "Success.";
         break;
       case this.warning:
         output = this.generateIconHtml(warning.svg);
