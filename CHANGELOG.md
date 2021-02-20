@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.4.0](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.3.0...v1.4.0) (2021-02-20)
+
+
+### Features
+
+* add new success and noicon features ([7c59e89](https://github.com/AlaskaAirlines/auro-alerts/commit/7c59e895b0db50dca218411361f9c887da859e38))
+
 # [1.3.0](https://github.com/AlaskaAirlines/auro-alerts/compare/v1.2.1...v1.3.0) (2021-02-12)
 
 
